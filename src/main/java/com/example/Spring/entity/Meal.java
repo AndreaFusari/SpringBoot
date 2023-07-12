@@ -1,13 +1,24 @@
-package entity;
+package com.example.Spring.entity;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "meals")
 
 public class Meal {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column
     private String name;
+    @Column
     private String description;
+    @Column
     private int calories;
+    @Column
     private double price;
-    private int id;
 
-    public Meal(String name, String description, int calories, double price, int id) {
+    public Meal(String name, String description, int calories, double price, Long id) {
         this.name = name;
         this.description = description;
         this.calories = calories;
@@ -50,11 +61,11 @@ public class Meal {
         this.price = price;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 }
