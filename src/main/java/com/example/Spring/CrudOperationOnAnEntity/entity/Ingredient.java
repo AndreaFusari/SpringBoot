@@ -1,5 +1,6 @@
 package com.example.Spring.CrudOperationOnAnEntity.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -25,6 +26,7 @@ public class Ingredient {
     @JoinTable(name = "meals_ingredients",
             joinColumns = @JoinColumn (name= "ingredient_id"),
             inverseJoinColumns= @JoinColumn(name="meal_id"))
+    @JsonManagedReference
     private List<Meal> meals;
 
     public Ingredient(Long id, String name, boolean isVegetarian, boolean isVegan, boolean isGlutenFree, boolean isLactoseFree) {

@@ -68,7 +68,7 @@ public class FirstController {
         } else return ResponseEntity.badRequest().body("Invalid min or max");
     }
     //Esercizio 1.2
-    @PostMapping(value="/meal")
+    @PostMapping(value="/meal/")
     public ResponseEntity<?>addMeal(@RequestBody Meal meal){
         if (meal != null){
         mealList.add(meal); // mealRepository.save(meal); stiamo usando la lista invece di un db

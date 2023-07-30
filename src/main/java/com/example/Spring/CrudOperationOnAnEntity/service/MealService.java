@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class MealService {
     @Autowired
     private MealRepository mealRepository;
-    public void addMeal(Meal meal){
+    public void createMeal(Meal meal){
         mealRepository.save(meal);
     }
     public Meal getMeal(Long id){

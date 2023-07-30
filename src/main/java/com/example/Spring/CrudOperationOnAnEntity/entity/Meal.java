@@ -1,6 +1,7 @@
 package com.example.Spring.CrudOperationOnAnEntity.entity;
 
 import com.example.Spring.CrudOperationOnAnEntity.entity.Ingredient;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -21,6 +22,7 @@ public class Meal {
     @Column
     private double price;
     @ManyToMany(mappedBy = "meals", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonBackReference
     private List<Ingredient> ingredients;
 
     public Meal(String name, String description, int calories, double price, Long id, List<Ingredient> ingredients) {
