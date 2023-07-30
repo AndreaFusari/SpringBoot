@@ -1,7 +1,7 @@
-package com.example.Spring.controller;
+package com.example.Spring;
 
-import com.example.Spring.entity.Meal;
-import com.example.Spring.repository.MealRepository;
+import com.example.Spring.CrudOperationOnAnEntity.entity.Meal;
+import com.example.Spring.CrudOperationOnAnEntity.repository.MealRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
