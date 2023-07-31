@@ -21,6 +21,8 @@ public class Meal {
     private int calories;
     @Column
     private double price;
+    @Column
+    private boolean isWinterMeal;
     @ManyToMany(mappedBy = "meals", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonBackReference
     private List<Ingredient> ingredients;
@@ -82,5 +84,13 @@ public class Meal {
 
     public void setIngredients(List<Ingredient> ingredients) {
         this.ingredients = ingredients;
+    }
+
+    public boolean isWinterMeal() {
+        return isWinterMeal;
+    }
+
+    public void setWinterMeal(boolean winterMeal) {
+        isWinterMeal = winterMeal;
     }
 }

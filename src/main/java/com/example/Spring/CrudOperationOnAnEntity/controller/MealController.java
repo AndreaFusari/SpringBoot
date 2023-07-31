@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/meal")
 public class MealController {
@@ -29,6 +31,10 @@ public class MealController {
     public ResponseEntity<String>deleteMeal(Long id){
         mealService.deleteMeal(id);
         return ResponseEntity.ok("Meal deleted");
+    }
+    @GetMapping(value="/winterMeals")
+    public ResponseEntity<List<Meal>> getWinterMeals(){
+        return ResponseEntity.ok(mealService.getWinterMeals());
     }
 
 }
